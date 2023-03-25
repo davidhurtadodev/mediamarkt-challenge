@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import parcelReducer from './parcelSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    parcel: parcelReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -1,0 +1,348 @@
+{
+  "parcels": [
+    {
+      "id": { "$oid": "641db7b2fc13" },
+      "deliveryAdress": "St. Marina, 54, Barcelona",
+      "deliveryDate": "3/27/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/25/2023",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fc13ae2238000168" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fc16" },
+      "deliveryAdress": "St. Diputacio, 178, Barcelona",
+      "deliveryDate": "3/28/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/27/2023",
+      "itemsCount": 3,
+      "items": [
+        { "$oid": "fc13ae1251rg8kx0" },
+        { "$oid": "fe237e2fh8j0k1a5" },
+        { "$oid": "fc13ae22380ea681" }
+      ]
+    },
+    {
+      "id": { "$oid": "641db7b2fc19" },
+      "deliveryAdress": "St. Trafalgar, 3, Barcelona",
+      "deliveryDate": "3/31/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/29/2023",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ar52qt07026j" }, { "$oid": "fc13ae22380ea681" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fc34" },
+      "deliveryAdress": "St. Passeis de Gracia, 56, Barcelona",
+      "deliveryDate": "3/29/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/28/2023",
+      "itemsCount": 3,
+      "items": [
+        { "$oid": "fc13ar52qt07026j" },
+        { "$oid": "fc13ae2238000168" },
+        { "$oid": "fc13ae125y0h0577" }
+      ]
+    },
+    {
+      "id": { "$oid": "641db7b2fc78" },
+      "deliveryAdress": "St. Travassera de les Corts, 118, Barcelona",
+      "deliveryDate": "4/4/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "4/3/2023",
+      "itemsCount": 3,
+      "items": [
+        { "$oid": "fc13ae22380ea681" },
+        { "$oid": "fc13ae1251rg8kx0" },
+        { "$oid": "fe237e2fh8j0k1a5" }
+      ]
+    },
+    {
+      "id": { "$oid": "641db7b2fc89" },
+      "deliveryAdress": "St. Balmes, 250, Barcelona",
+      "deliveryDate": "3/27/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/25/2023",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fc13ae125y6g0431" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fc91" },
+      "deliveryAdress": "St. Passeig de Sant Joan, 90, Barcelona",
+      "deliveryDate": "3/28/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/28/2023",
+      "itemsCount": 3,
+      "items": [
+        { "$oid": "fc13ae223800a241" },
+        { "$oid": "fc13ae1251rg8kx0" },
+        { "$oid": "fc13ar52qt07026j" }
+      ]
+    },
+    {
+      "id": { "$oid": "641db7b2fc97" },
+      "deliveryAdress": "St. Londres, 10, Barcelona",
+      "deliveryDate": "3/28/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/27/2023",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fc13ae22380ea681" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd08" },
+      "deliveryAdress": "St. Paris, 34, Barcelona",
+      "deliveryDate": "3/27/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/25/2022",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae125y0h0577" }, { "$oid": "fc13ae22380ea681" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd11" },
+      "deliveryAdress": "St. Casp, 45, Barcelona",
+      "deliveryDate": "3/31/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/30/2023",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae125y6g0431" }, { "$oid": "fe237e2fh8j0k1a5" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd29" },
+      "deliveryAdress": "St. Castillejos, 98,Barcelona",
+      "deliveryDate": "3/28/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/27/2023",
+      "itemsCount": 3,
+      "items": [
+        { "$oid": "fc13ae22380ea681" },
+        { "$oid": "fc13ar52qt67226t" },
+        { "$oid": "fc13ae1251rg8kx0" }
+      ]
+    },
+    {
+      "id": { "$oid": "641db7b2fd68" },
+      "deliveryAdress": "St. Aribau, 23, Barcelona",
+      "deliveryDate": "3/31/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/30/2023",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae125y0h0577" }, { "$oid": "fc13ae2238000168" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd71" },
+      "deliveryAdress": "St. Muntaner, 53, Barcelona",
+      "deliveryDate": "3/29/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/29/2023",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fe237e2fh8j0k1a5" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd87" },
+      "deliveryAdress": "St. Tibidabo, 110, Barcelona",
+      "deliveryDate": "4/5/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "4/4/2023",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fe23rj2fs840u7a5" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd90" },
+      "deliveryAdress": "St. Gran Via de les Corts Catalanes, 450, Barcelona",
+      "deliveryDate": "3/29/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/28/2022",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ar52qt07026j" }, { "$oid": "fc13ae22380ea681" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fd94" },
+      "deliveryAdress": "St. Via Laietana, 41, Barcelona",
+      "deliveryDate": "3/27/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/25/2022",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae2238000168" }, { "$oid": "fe237e2fh8j0k1a5" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fe01" },
+      "deliveryAdress": "St. Alfons xiii, 120, Barcelona",
+      "deliveryDate": "4/4/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "4/3/2022",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae223800a241" }, { "$oid": "fc13ar52qt07026j" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fe09" },
+      "deliveryAdress": "St. Wellington, 8, Barcelona",
+      "deliveryDate": "3/29/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/28/2023",
+      "itemsCount": 2,
+      "items": [{ "$oid": "fc13ae125y6g0431" }, { "$oid": "fe23rj2fs840u7a5" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fe41" },
+      "deliveryAdress": "St. Valencia, 225, Barcelona",
+      "deliveryDate": "3/31/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "3/30/2022",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fc13ar52qt67226t" }]
+    },
+    {
+      "id": { "$oid": "641db7b2fe56" },
+      "deliveryAdress": "St. Mallorca, 187, Barcelona",
+      "deliveryDate": "4/4/2023",
+      "pickupAdress": "St. Solsones, 2, Barcelona",
+      "pickupDate": "4/3/2022",
+      "itemsCount": 1,
+      "items": [{ "$oid": "fc13ae125y0h0577" }]
+    }
+  ],
+  "items": [
+    {
+      "id": { "$oid": "fc13ae2238000168" },
+      "type": "Smartwatch",
+      "model": "Amazfit Bip 3",
+      "price": 59,
+      "weigth": 40
+    },
+    {
+      "id": { "$oid": "fc13ae1251rg8kx0" },
+      "type": "Phone",
+      "model": "Samsung Galaxy S23 5G",
+      "price": 961,
+      "weigth": 124
+    },
+    {
+      "id": { "$oid": "fe237e2fh8j0k1a5" },
+      "type": "Television",
+      "model": "Hisense 55A6BG",
+      "price": 339,
+      "weigth": 6340
+    },
+    {
+      "id": { "$oid": "fc13ar52qt67226t" },
+      "type": "PC",
+      "model": "HP 14S-DQ2022NS",
+      "price": 549,
+      "weigth": 1890
+    },
+    {
+      "id": { "$oid": "fc13ae223800a241" },
+      "type": "Smartwatch",
+      "model": "Samsung Watch 4BT",
+      "price": 211,
+      "weigth": 38
+    },
+    {
+      "id": { "$oid": "fc13ar52qt07026j" },
+      "type": "PC",
+      "model": "MacBook Air (2020)",
+      "price": 999,
+      "weigth": 1210
+    },
+    {
+      "id": { "$oid": "fc13ae125y6g0431" },
+      "type": "Phone",
+      "model": "Xiomi Redmi Note 11S",
+      "price": 250,
+      "weigth": 145
+    },
+    {
+      "id": { "$oid": "fe23rj2fs840u7a5" },
+      "type": "Television",
+      "model": "Xiaomi Mi TV P1",
+      "price": 188,
+      "weigth": 4570
+    },
+    {
+      "id": { "$oid": "fc13ae22380ea681" },
+      "type": "Smartwatch",
+      "model": "Apple Watch Series 8",
+      "price": 589,
+      "weigth": 42
+    },
+    {
+      "id": { "$oid": "fc13ae125y0h0577" },
+      "type": "Phone",
+      "model": "iPhone 14 Pro",
+      "price": 1169,
+      "weigth": 153
+    }
+  ],
+  "carriers": [
+    {
+      "id": { "$oid": "het32r0g0u78" },
+      "companyName": "Seur",
+      "driver": "Manfred Steger",
+      "licensePlate": "3859fyh",
+      "centerAdress": "St. Cal Patrici, 2, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32gb78b6q" },
+      "companyName": "MWR",
+      "driver": "Anna-maria Tompion",
+      "licensePlate": "5780hqa",
+      "centerAdress": "St. Paris, 158, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32r0g36g9" },
+      "companyName": "Seur",
+      "driver": "Suellen Sandifer",
+      "licensePlate": "1008dcl",
+      "centerAdress": "St. Cal Patrici, 2, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32bf618ka" },
+      "companyName": "DHL",
+      "driver": "Demetra Luckman",
+      "licensePlate": "9255jvz",
+      "centerAdress": "St. Estany de la Messeguera, 14, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32bff15sm" },
+      "companyName": "DHL",
+      "driver": "Judd Beekman",
+      "licensePlate": "2349fia",
+      "centerAdress": "St. Estany de la Messeguera, 14, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32yw1747f" },
+      "companyName": "Correos",
+      "driver": "Charlean Booker",
+      "licensePlate": "3821has",
+      "centerAdress": "St. Numero 29, 12, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32gb7yh18" },
+      "companyName": "MWR",
+      "driver": "Stevana Hassan",
+      "licensePlate": "7711gus",
+      "centerAdress": "St. Paris, 158, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32r0gr6na" },
+      "companyName": "Seur",
+      "driver": "Gearard Dilke",
+      "licensePlate": "4601kme",
+      "centerAdress": "St. Cal Patrici, 2, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32yw174i5" },
+      "companyName": "Correos",
+      "driver": "Elaina Molyneaux",
+      "licensePlate": "8928jab",
+      "centerAdress": "St. Numero 29, 12, Barcelona"
+    },
+    {
+      "id": { "$oid": "het32gb78j6v" },
+      "companyName": "MWR",
+      "driver": "Jecho Tatlock",
+      "licensePlate": "1072mbn",
+      "centerAdress": "St. Paris, 158, Barcelona"
+    }
+  ]
+}
