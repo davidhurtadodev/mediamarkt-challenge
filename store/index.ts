@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import parcelReducer from './parcelSlice';
+import carrierReducer from './carrierSlice';
+import UIReducer from './UISlice';
 
 export const store = configureStore({
   reducer: {
     parcel: parcelReducer,
+    carrier: carrierReducer,
+    UI: UIReducer,
   },
 });
 

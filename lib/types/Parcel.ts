@@ -7,3 +7,7 @@ export interface Parcel {
   itemsCount: number;
   items: { $oid: string }[];
 }
+
+export interface ParcelWithCarrier extends Parcel {
+  carrier: { $oid: string };
+}

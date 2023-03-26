@@ -1,26 +1,26 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Parcel } from '@/lib/types/Parcel';
+import { Carrier } from '@/lib/types/Carrier';
 import parcelServices from '@/lib/services/parcelServices';
-// import itemsService from '@/lib/services/itemsService';
+import carrierService from '@/lib/services/carrierService';
 
 // Type of state
-export interface parcelState {
-  value: Parcel[];
+export interface carrierState {
+  value: Carrier[];
   status: 'idle' | 'loading' | 'failed';
 }
 
 // Initial state
 
-const initialState: parcelState = {
+const initialState: carrierState = {
   value: [],
   status: 'idle',
 };
 
-export const fetchParcelsAsync = createAsyncThunk(
-  'parcels/fetchParcels',
+export const fetchCarriersAsync = createAsyncThunk(
+  'carrier/fetchCarriers',
   async () => {
-    const parcels = await parcelServices.getAll();
-    return parcels;
+    const carriers = await carrierService.getAll();
+    return carriers;
   }
 );
 
@@ -32,24 +32,24 @@ export const fetchParcelsAsync = createAsyncThunk(
 //   }
 // );
 
-export const parcelSlice = createSlice({
-  name: 'parcels',
+export const carrierSlice = createSlice({
+  name: 'carrier',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
 
-      .addCase(fetchParcelsAsync.pending, (state) => {
+      .addCase(fetchCarriersAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchParcelsAsync.fulfilled, (state, action) => {
+      .addCase(fetchCarriersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value = action.payload;
       })
-      .addCase(fetchParcelsAsync.rejected, (state, action) => {
+      .addCase(fetchCarriersAsync.rejected, (state, action) => {
         state.status = 'failed';
       });
   },
 });
 
-export default parcelSlice.reducer;
+export default carrierSlice.reducer;
