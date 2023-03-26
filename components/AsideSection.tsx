@@ -10,32 +10,43 @@ import selectStyles from '@/lib/misc/selectStyles';
 
 export default function AsideSection() {
   const dispatch = useAppDispatch();
+
+  //states
   const asideState = useAppSelector(
     (state: RootState) => state.UI.asideSection
   );
   const carriers = useAppSelector((state: RootState) => state.carrier.value);
-  //   console.log(carriers);
+
+  //options for select
   const carriersOptions = carriers.map((carrier) => ({
     value: carrier.id.$oid,
     label: carrier.id.$oid.toUpperCase(),
   }));
+
+  //inputs and select value
   const [parcelId, setParcelId] = useState('');
   const [carrierId, setCarrierId] = useState('');
+
+  // handle inputs change
   const handleParcelIdChange = (e: React.FormEvent<HTMLInputElement>) => {
     setParcelId(e.currentTarget.value.toUpperCase());
   };
   const handleCarrierChange = (selectedOption: any) => {
     setCarrierId(selectedOption.value);
+    console.log(carrierId);
   };
+
   const handleParcelSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    // const parcel = new Parcel(name, note, image, category);
-    // const createdItem = await dispatch(createItemAsync(item));
+
     const info = {
       parcelId: parcelId.toLocaleLowerCase(),
       carrierId: carrierId.toLowerCase(),
     };
+
     dispatch(addParcelToList(info));
+    setParcelId('');
+    setCarrierId('');
     dispatch(
       changeAsideState({
         isVisible: false,

@@ -46,21 +46,29 @@ export const parcelSlice = createSlice({
         return;
       }
 
-      const isDefinedPickupDateList = state.parcelLists.find(
+      const pickupDateIndex = state.parcelLists.findIndex(
         ([pickupDate, parcels]) => {
           return pickupDate === parcel?.pickupDate;
         }
       );
-      if (!isDefinedPickupDateList) {
+
+      if (pickupDateIndex < 0) {
         state.parcelLists.push([
           parcel?.pickupDate,
           [
             {
               ...parcel,
-              carrier: { $oid: 'het32r0g0u78' },
+              carrier: { $oid: action.payload.carrierId },
+              isDelivered: false,
             },
           ],
         ]);
+      } else {
+        state.parcelLists[pickupDateIndex][1].push({
+          ...parcel,
+          carrier: { $oid: action.payload.carrierId },
+          isDelivered: false,
+        });
       }
     },
   },

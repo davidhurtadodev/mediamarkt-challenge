@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface UIState {
+  view: {
+    value: string;
+  };
   modal: {
     isVisible: boolean;
     type: string | null;
@@ -15,11 +18,14 @@ export interface UIState {
   };
 
   selectedParcelList: {
-    id: string | null;
+    date: string | null;
   };
 }
 
 const initialState: UIState = {
+  view: {
+    value: 'listOfParcelLists',
+  },
   modal: {
     isVisible: false,
     type: '',
@@ -34,7 +40,7 @@ const initialState: UIState = {
   },
 
   selectedParcelList: {
-    id: null,
+    date: null,
   },
 };
 
@@ -45,8 +51,22 @@ export const UISlice = createSlice({
     changeAsideState: (state, action) => {
       state.asideSection = action.payload;
     },
+    changeSelectedParcelList: (state, action) => {
+      state.selectedParcelList.date = action.payload;
+    },
+    changeViewValue: (state, action) => {
+      state.view.value = action.payload;
+    },
+    changeSelectedParcel: (state, action) => {
+      state.selectedParcel.id = action.payload;
+    },
   },
 });
-export const { changeAsideState } = UISlice.actions;
+export const {
+  changeAsideState,
+  changeSelectedParcelList,
+  changeViewValue,
+  changeSelectedParcel,
+} = UISlice.actions;
 
 export default UISlice.reducer;

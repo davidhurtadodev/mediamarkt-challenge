@@ -10,4 +10,5 @@ export interface Parcel {
 
 export interface ParcelWithCarrier extends Parcel {
   carrier: { $oid: string };
+  isDelivered: boolean;
 }

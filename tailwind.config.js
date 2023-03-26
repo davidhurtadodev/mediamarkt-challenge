@@ -17,6 +17,7 @@ module.exports = {
       },
       backgroundColor: {
         'custom-background-opacity': 'rgba(0,0,0,.3)',
+        'custom-background-opacity-primary': 'rgba(223, 0, 0, 0.1)',
         'custom-overlay-opacity': 'rgba(0, 0, 0, 0.25)',
       },
     },
