@@ -61,7 +61,7 @@ export default function Main() {
   );
 
   const arrayOfGroupedParcels = Object.entries(parcelsGroupedByDate);
-  console.log(arrayOfGroupedParcels);
+  //   console.log(arrayOfGroupedParcels);
   arrayOfGroupedParcels.sort((a, b) => {
     const dateA = new Date(a[0]);
     const dateB = new Date(b[0]);
@@ -71,7 +71,7 @@ export default function Main() {
 
   //   console.log(parcelsGroupedByDate);
   //   console.log(arrayOfGroupedParcels);
-  console.table(arrayOfGroupedParcels);
+  //   console.table(arrayOfGroupedParcels);
 
   return (
     <div

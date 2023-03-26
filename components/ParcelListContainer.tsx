@@ -16,7 +16,7 @@ export default function ParcelListContainer({
     0
   );
   const mappedDeliveryDates = parcels.map((parcel) => parcel.deliveryDate);
-  console.log(mappedDeliveryDates);
+  // console.log(mappedDeliveryDates);
   return (
     <div className="border-b-[1px] border-[#3A35411F] pb-[14px] mb-4">
       <h2 className=" px-[14px]  text-base text-gray font-medium mb-0">

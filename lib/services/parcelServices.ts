@@ -10,5 +10,14 @@ const getAll = async () => {
     console.error(err);
   }
 };
+// const getOne = async (id: string) => {
+//   try {
+//     const { data } = await axios.get(`baseUrl/`);
+
+//     return data;
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
 export default { getAll };

@@ -1,10 +1,4 @@
 {
-  "parcelsList": [
-    {
-      "id": { "$oid": "641db7b2fc134fa23c" },
-      "parcels": [{ "$oid": "641db7b2fc13" }]
-    }
-  ],
   "parcels": [
     {
       "id": { "$oid": "641db7b2fc13" },
