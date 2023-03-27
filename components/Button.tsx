@@ -11,7 +11,6 @@ interface ButtonProps {
 export default function Button({
   children,
   buttonType,
-
   onClick,
   classNames,
 }: ButtonProps) {

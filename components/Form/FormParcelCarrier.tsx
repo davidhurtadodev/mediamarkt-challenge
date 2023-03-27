@@ -5,16 +5,18 @@ import Button from '../Button';
 import { RootState } from '@/store';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { addParcelToList } from '@/store/parcelSlice';
-import { changeAsideState } from '@/store/UISlice';
+import { changeAsideState, openModal } from '@/store/UISlice';
 import selectStyles from '@/lib/misc/selectStyles';
 
 export default function FormParcelCarrier() {
   const dispatch = useAppDispatch();
 
+  //State
   const carriers = useAppSelector((state: RootState) => state.carrier.value);
   const UIAsideState = useAppSelector(
     (state: RootState) => state.UI.asideSection
   );
+  const parcelsState = useAppSelector((state: RootState) => state.parcel.value);
 
   //options for select
   const carriersOptions = carriers.map((carrier) => ({
@@ -38,12 +40,19 @@ export default function FormParcelCarrier() {
   const handleParcelSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const info = {
-      parcelId: parcelId.toLowerCase(),
-      carrierId: carrierId.toLowerCase(),
-    };
+    const isValidParcelId = parcelsState.some(
+      (parcel) => parcel.id.$oid === parcelId.toLowerCase()
+    );
 
-    dispatch(addParcelToList(info));
+    if (isValidParcelId) {
+      const info = {
+        parcelId: parcelId.toLowerCase(),
+        carrierId: carrierId.toLowerCase(),
+      };
+
+      dispatch(addParcelToList(info));
+    } else dispatch(openModal('error'));
+
     setParcelId('');
     setCarrierId('');
     dispatch(

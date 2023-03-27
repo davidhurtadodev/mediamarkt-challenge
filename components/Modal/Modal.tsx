@@ -5,14 +5,16 @@ import { closeModal } from '@/store/UISlice';
 import { RootState } from '@/store';
 import ModalSuccess from './ModalSuccess';
 import ModalError from './ModalError';
+import useBrowserModal from '@/lib/useBrowserModal';
 
 export default function Modal() {
   const dispatch = useAppDispatch();
-  const [isBrowser, setIsBrowser] = useState(false);
+  const isBrowser = useBrowserModal();
+  // const [isBrowser, setIsBrowser] = useState(false);
   const modalUIState = useAppSelector((state: RootState) => state.UI.modal);
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsBrowser(true);
+  // }, []);
 
   const handleCloseClick = () => {
     dispatch(closeModal(null));

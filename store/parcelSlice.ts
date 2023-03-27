@@ -80,7 +80,6 @@ export const parcelSlice = createSlice({
       ].isDelivered = true;
     },
     addParcelToList: (state, action) => {
-      debugger;
       const parcel = state.value.find((parcel: Parcel) => {
         return parcel.id.$oid === action.payload.parcelId ? parcel : null;
       });

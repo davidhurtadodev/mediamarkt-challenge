@@ -57,12 +57,7 @@ export default function ParcelListComponent({
       </ReusableContainer>
     </Link>
   ) : (
-    <ReusableContainer
-      //   onClick={
-      //     !parcel.isDelivered ? () => parcelListDetailsClickHandler() : undefined
-      //   }
-      key={parcel.id.$oid}
-    >
+    <ReusableContainer key={parcel.id.$oid}>
       <IconWithBackground src={cargoImg} alt="cargo" />
       <div className="ml-3 grow">
         <h3 className="text-sm mb-0">{parcel.id.$oid} Parcel List</h3>

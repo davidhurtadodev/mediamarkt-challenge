@@ -46,12 +46,7 @@ export default function ParcelView() {
       <div>
         <div className="  flex items-center mb-6">
           <Link href="/list">
-            <Image
-              // onClick={() => backIconClickHandler()}
-              className="cursor-pointer"
-              src={backIcon}
-              alt={'back'}
-            />
+            <Image className="cursor-pointer" src={backIcon} alt={'back'} />
           </Link>
           <h1 className="font-medium  text-2xl text-gray ml-4">
             {selectedParcelId?.toUpperCase()} Parcel

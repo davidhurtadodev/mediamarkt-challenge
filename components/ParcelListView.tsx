@@ -29,22 +29,12 @@ export default function ParcelList({}) {
     0
   );
 
-  // Return to list of parcels function
-  // const backIconClickHandler = () => {
-  //   dispatch(changeViewValue('listOfParcelLists'));
-  // };
-
   return (
     <>
       <div>
         <div className="flex items-center mb-6">
           <Link href="/">
-            <Image
-              // onClick={() => backIconClickHandler()}
-              className="cursor-pointer"
-              src={backIcon}
-              alt={'back'}
-            />
+            <Image className="cursor-pointer" src={backIcon} alt={'back'} />
           </Link>
           <h1 className="font-medium  text-2xl text-gray ml-4">
             Parcel List {helper.formatDate(selectedParcelListDate!)}

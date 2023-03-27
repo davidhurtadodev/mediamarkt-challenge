@@ -1,8 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { RootState } from '@/store';
 import { changeAsideState } from '@/store/UISlice';
-import AsideSection from './AsideSection';
-import FormParcelCarrier from './Form/FormParcelCarrier';
+import Modal from './Modal/Modal';
 import Button from './Button';
 import ParcelListContainer from './ParcelListContainer';
 import Image from 'next/image';
@@ -25,6 +24,7 @@ export default function ListOfParcelLists() {
 
   return (
     <>
+      <Modal />
       <h1 className="font-medium px-[14px] text-2xl text-gray mb-6">
         Parcel Lists
       </h1>

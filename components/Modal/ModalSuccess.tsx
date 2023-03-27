@@ -16,7 +16,7 @@ export default function ModalSuccess() {
       <h3 className="font-normal mb-8 text-xl leading-6">
         Parcel successfully delivered to the carrier
       </h3>
-      <Link href="/list">
+      <Link className="w-full" href="/list">
         <Button onClick={closeModalBtnHandler}>Go to parcel list</Button>
       </Link>
     </>
