@@ -1,18 +1,9 @@
-import { useState } from 'react';
-import Select from 'react-select';
-import Input from './Input';
-import Button from './Button';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { changeAsideState } from '@/store/UISlice';
-import { addParcelToList } from '@/store/parcelSlice';
 import { RootState } from '@/store';
-import selectStyles from '@/lib/misc/selectStyles';
+import SignatureComponent from './SignatureComponent';
 import FormParcelCarrier from './Form/FormParcelCarrier';
 import FormDriver from './Form/FormDriver';
-
-// interface AsideSectionProps {
-//   children: React.ReactNode;
-// }
 
 export default function AsideSection() {
   const dispatch = useAppDispatch();
@@ -42,6 +33,8 @@ export default function AsideSection() {
       >
         {asideState.type === 'add-parcel' && <FormParcelCarrier />}
         {asideState.type === 'check-driver' && <FormDriver />}
+
+        {asideState.type === 'signature' && <SignatureComponent />}
       </aside>
     </div>
   ) : null;

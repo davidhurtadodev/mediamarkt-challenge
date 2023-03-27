@@ -11,7 +11,7 @@ export interface UIState {
   };
   asideSection: {
     isVisible: boolean;
-    type: 'add-parcel' | 'check-driver' | null;
+    type: 'add-parcel' | 'check-driver' | 'signature' | null;
   };
 }
 

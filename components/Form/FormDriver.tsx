@@ -60,9 +60,8 @@ export default function FormDriver() {
       licenseToVerify === license.toLowerCase()
     ) {
       dispatch(changeParcelDeliveryState(selectedParcelId));
-      dispatch(openModal('success'));
+      //   dispatch(openModal('success'));
     } else {
-      console.error('error en submit');
       dispatch(openModal('error'));
     }
 
@@ -70,8 +69,8 @@ export default function FormDriver() {
     setLicense('');
     dispatch(
       changeAsideState({
-        isVisible: false,
-        type: null,
+        isVisible: true,
+        type: 'signature',
       })
     );
   };
