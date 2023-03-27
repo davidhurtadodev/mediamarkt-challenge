@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import helper from '@/lib/helper';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { RootState } from '@/store';
@@ -6,7 +7,7 @@ import { changeViewValue } from '@/store/UISlice';
 import ParcelListComponent from './ParcelListComponent';
 import backIcon from '@/public/assets/icons/back.svg';
 
-export default function ParcelListPage({}) {
+export default function ParcelList({}) {
   const dispatch = useAppDispatch();
   const selectedParcelListDate = useAppSelector(
     (state: RootState) => state.parcel.selectedParcelList.date
@@ -29,20 +30,22 @@ export default function ParcelListPage({}) {
   );
 
   // Return to list of parcels function
-  const backIconClickHandler = () => {
-    dispatch(changeViewValue('listOfParcelLists'));
-  };
+  // const backIconClickHandler = () => {
+  //   dispatch(changeViewValue('listOfParcelLists'));
+  // };
 
   return (
     <>
       <div>
-        <div className="  flex items-center mb-6">
-          <Image
-            onClick={() => backIconClickHandler()}
-            className="cursor-pointer"
-            src={backIcon}
-            alt={'back'}
-          />
+        <div className="flex items-center mb-6">
+          <Link href="/">
+            <Image
+              // onClick={() => backIconClickHandler()}
+              className="cursor-pointer"
+              src={backIcon}
+              alt={'back'}
+            />
+          </Link>
           <h1 className="font-medium  text-2xl text-gray ml-4">
             Parcel List {helper.formatDate(selectedParcelListDate!)}
           </h1>

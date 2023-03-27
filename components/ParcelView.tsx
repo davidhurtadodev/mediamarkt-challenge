@@ -1,13 +1,14 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { RootState } from '@/store';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { changeViewValue, changeAsideState } from '@/store/UISlice';
 import backIcon from '@/public/assets/icons/back.svg';
-import Image from 'next/image';
 import Button from './Button';
 import ItemComponent from './ItemComponent';
 import Modal from './Modal/Modal';
 
-export default function ParcelDetailsPage() {
+export default function ParcelView() {
   const dispatch = useAppDispatch();
   const selectedParcelId = useAppSelector(
     (state: RootState) => state.parcel.selectedParcel.id
@@ -27,9 +28,9 @@ export default function ParcelDetailsPage() {
     );
   });
 
-  const backIconClickHandler = () => {
-    dispatch(changeViewValue('parcelList'));
-  };
+  // const backIconClickHandler = () => {
+  //   dispatch(changeViewValue('parcelList'));
+  // };
   const deliveryBtnHandler = (e: React.MouseEvent<HTMLElement>) => {
     dispatch(
       changeAsideState({
@@ -44,12 +45,14 @@ export default function ParcelDetailsPage() {
       <Modal />
       <div>
         <div className="  flex items-center mb-6">
-          <Image
-            onClick={() => backIconClickHandler()}
-            className="cursor-pointer"
-            src={backIcon}
-            alt={'back'}
-          />
+          <Link href="/list">
+            <Image
+              // onClick={() => backIconClickHandler()}
+              className="cursor-pointer"
+              src={backIcon}
+              alt={'back'}
+            />
+          </Link>
           <h1 className="font-medium  text-2xl text-gray ml-4">
             {selectedParcelId?.toUpperCase()} Parcel
           </h1>

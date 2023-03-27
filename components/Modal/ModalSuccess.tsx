@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '../Button';
 import successIcon from '@/public/assets/icons/success.svg';
 import { useAppDispatch } from '@/store/hooks';
@@ -15,7 +16,9 @@ export default function ModalSuccess() {
       <h3 className="font-normal mb-8 text-xl leading-6">
         Parcel successfully delivered to the carrier
       </h3>
-      <Button onClick={closeModalBtnHandler}>Go to parcel list</Button>
+      <Link href="/list">
+        <Button onClick={closeModalBtnHandler}>Go to parcel list</Button>
+      </Link>
     </>
   );
 }

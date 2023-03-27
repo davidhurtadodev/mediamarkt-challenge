@@ -8,7 +8,7 @@ import ParcelListContainer from './ParcelListContainer';
 import Image from 'next/image';
 import plus from '@/public/assets/icons/plus.svg';
 
-export default function ListOfParcelListsPage() {
+export default function ListOfParcelLists() {
   const dispatch = useAppDispatch();
 
   const parcelListsState = useAppSelector(

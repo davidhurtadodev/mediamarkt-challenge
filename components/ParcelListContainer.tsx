@@ -1,5 +1,6 @@
 import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import helper from '@/lib/helper';
+import Link from 'next/link';
 import ReusableContainer from './ReusableContainer';
 import { changeViewValue } from '@/store/UISlice';
 import { changeSelectedParcelList } from '@/store/parcelSlice';
@@ -26,30 +27,33 @@ export default function ParcelListContainer({
 
   const containerClickHandle = () => {
     dispatch(changeSelectedParcelList(pickUpDate));
-    dispatch(changeViewValue('parcelList'));
   };
 
   return (
-    <ReusableContainer onClick={containerClickHandle}>
-      <h2 className=" px-[14px]  text-base text-gray font-medium mb-0">
-        Parcel list {helper.formatDate(pickUpDate)}
-      </h2>
-      <div className="flex px-[14px] items-start">
-        <div className="flex flex-col">
-          <span className="text-[10px] text-gray opacity-[.87] font-normal">
-            {notRepeatedCarriers.length} carriers
-            {helper.verifyPassedDate(pickUpDate)}
-          </span>
-          <span className="text-[10px] text-gray opacity-[.87] font-normal">
-            {totalItems} items
-          </span>
+    <Link href="/list">
+      <ReusableContainer onClick={() => containerClickHandle()}>
+        <div className="w-full">
+          <h2 className=" px-[14px]  text-base text-gray font-medium mb-0">
+            Parcel list {helper.formatDate(pickUpDate)}
+          </h2>
+          <div className="flex px-[14px] items-start">
+            <div className="flex flex-col">
+              <span className="text-[10px] text-gray opacity-[.87] font-normal">
+                {notRepeatedCarriers.length} carriers
+                {helper.verifyPassedDate(pickUpDate)}
+              </span>
+              <span className="text-[10px] text-gray opacity-[.87] font-normal">
+                {totalItems} items
+              </span>
+            </div>
+            <div className="mr-0 ml-auto flex">
+              <span className="font-medium  text-primary-accent text-[10px] ">
+                {helper.formatDate(pickUpDate)}
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="mr-0 ml-auto flex">
-          <span className="font-medium  text-primary-accent text-[10px] ">
-            {helper.formatDate(pickUpDate)}
-          </span>
-        </div>
-      </div>
-    </ReusableContainer>
+      </ReusableContainer>
+    </Link>
   );
 }

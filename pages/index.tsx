@@ -1,12 +1,24 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { Inter } from 'next/font/google';
-import Main from '@/components/Main';
+import MainView from '@/components/MainView';
 import Layout from '@/components/Layout';
-
-const inter = Inter({ subsets: ['latin'] });
+import { useAppDispatch } from '@/store/hooks';
+import { fetchParcelsAsync } from '@/store/parcelSlice';
+import { fetchCarriersAsync } from '@/store/carrierSlice';
+import { fetchItemsAsync } from '@/store/itemSlice';
+import ListOfParcelLists from '@/components/ListOfParcelLists';
 
 export default function Home() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchParcelsAsync());
+    dispatch(fetchCarriersAsync());
+    dispatch(fetchItemsAsync());
+  }, [dispatch]);
+
   return (
     <Layout>
       <Head>
@@ -15,7 +27,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main />
+      <ListOfParcelLists />
     </Layout>
   );
 }
