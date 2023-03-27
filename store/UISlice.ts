@@ -12,14 +12,6 @@ export interface UIState {
     isVisible: boolean;
     type: string | null;
   };
-
-  selectedParcel: {
-    id: string | null;
-  };
-
-  selectedParcelList: {
-    date: string | null;
-  };
 }
 
 const initialState: UIState = {
@@ -33,14 +25,6 @@ const initialState: UIState = {
   asideSection: {
     isVisible: false,
     type: null,
-  },
-
-  selectedParcel: {
-    id: null,
-  },
-
-  selectedParcelList: {
-    date: null,
   },
 };
 

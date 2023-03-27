@@ -15,7 +15,7 @@ interface ParcelListDetailsProps {
 export default function ParcelListDetails({}) {
   const dispatch = useAppDispatch();
   const selectedParcelListDate = useAppSelector(
-    (state: RootState) => state.UI.selectedParcelList.date
+    (state: RootState) => state.parcel.selectedParcelList.date
   );
 
   const parcelsLists = useAppSelector(
@@ -54,14 +54,6 @@ export default function ParcelListDetails({}) {
         </span>
         <div className="mt-3">
           {selectedParcelLists.map((parcel) => {
-            // const parcelListDetailsClickHandler = () => {
-            //   debugger;
-            //   dispatch(changeSelectedParcel(parcel.id.$oid));
-            //   dispatch(changeViewValue('parcel'));
-            // };
-            // const carrierCompany = carriers.find((carrier) => {
-            //   return carrier.id.$oid === parcel.carrier.$oid;
-            // });
             return <ParcelListComponent parcel={parcel} key={parcel.id.$oid} />;
           })}
         </div>

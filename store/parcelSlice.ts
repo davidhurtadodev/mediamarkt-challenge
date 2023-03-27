@@ -7,6 +7,14 @@ import parcelServices from '@/lib/services/parcelServices';
 export interface parcelState {
   value: Parcel[];
   parcelLists: [string, ParcelWithCarrier[]][];
+
+  selectedParcel: {
+    id: string | null;
+  };
+
+  selectedParcelList: {
+    date: string | null;
+  };
   status: 'idle' | 'loading' | 'failed';
 }
 
@@ -16,6 +24,12 @@ const initialState: parcelState = {
   value: [],
   parcelLists: [],
   status: 'idle',
+  selectedParcel: {
+    id: null,
+  },
+  selectedParcelList: {
+    date: null,
+  },
 };
 
 export const fetchParcelsAsync = createAsyncThunk(
@@ -38,6 +52,13 @@ export const parcelSlice = createSlice({
   name: 'parcels',
   initialState,
   reducers: {
+    changeSelectedParcelList: (state, action) => {
+      state.selectedParcelList.date = action.payload;
+    },
+    changeSelectedParcel: (state, action) => {
+      state.selectedParcel.id = action.payload;
+    },
+    changeParcelDeliveryState: (state, action) => {},
     addParcelToList: (state, action) => {
       const parcel = state.value.find((parcel: Parcel) => {
         return parcel.id.$oid === action.payload.parcelId ? parcel : null;
@@ -88,6 +109,10 @@ export const parcelSlice = createSlice({
   },
 });
 
-export const { addParcelToList } = parcelSlice.actions;
+export const {
+  addParcelToList,
+  changeSelectedParcelList,
+  changeSelectedParcel,
+} = parcelSlice.actions;
 
 export default parcelSlice.reducer;

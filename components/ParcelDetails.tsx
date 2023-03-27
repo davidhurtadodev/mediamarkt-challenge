@@ -6,8 +6,6 @@ import backIcon from '@/public/assets/icons/back.svg';
 import Image from 'next/image';
 import Button from './Button';
 import ItemComponent from './ItemComponent';
-import helper from '@/lib/helper';
-import productIconOptions from '@/lib/misc/productIconOptions';
 
 export default function ParcelDetails() {
   const dispatch = useAppDispatch();
@@ -35,8 +33,6 @@ export default function ParcelDetails() {
   const backIconClickHandler = () => {
     dispatch(changeViewValue('parcelList'));
   };
-
-  console.log(selectedParcelItems);
 
   return (
     <div className="h-screen flex flex-col px-5 pt-12 cursor-pointer    border-b-[1px] border-[#3A35411F] pb-4">

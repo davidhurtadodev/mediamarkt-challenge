@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { RootState } from '@/store';
 import { changeAsideState } from '@/store/UISlice';
 import AsideSection from './AsideSection';
+import FormParcelCarrier from './Form/FormParcelCarrier';
 import Button from './Button';
 import ParcelListContainer from './ParcelListContainer';
 import Image from 'next/image';
@@ -55,7 +56,9 @@ export default function ListOfParcelLists() {
           <Image src={plus} alt="add parcel" />
         </Button>
       </div>
-      <AsideSection />
+      <AsideSection>
+        <FormParcelCarrier />
+      </AsideSection>
     </div>
   );
 }
