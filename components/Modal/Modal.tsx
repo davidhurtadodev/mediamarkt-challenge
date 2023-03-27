@@ -37,5 +37,5 @@ export default function Modal() {
       modalJSX,
       document.getElementById('modal-root')!
     );
-  }
+  } else return null;
 }

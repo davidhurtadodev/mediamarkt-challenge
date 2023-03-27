@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Item } from '@/lib/types/Item';
 import itemService from '@/lib/services/itemService';
 
-// Type of state
+// Shape of state
 export interface carrierState {
   value: Item[];
   status: 'idle' | 'loading' | 'failed';
@@ -15,16 +15,19 @@ const initialState: carrierState = {
   status: 'idle',
 };
 
+//Thunk for fetching items
 export const fetchItemsAsync = createAsyncThunk('item/fetchItems', async () => {
   const items = await itemService.getAll();
   return items;
 });
 
+// Slice
 export const itemSlice = createSlice({
   name: 'item',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    //reducer for fetching data
     builder
       .addCase(fetchItemsAsync.pending, (state) => {
         state.status = 'loading';

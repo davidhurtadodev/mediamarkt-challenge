@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Parcel, ParcelWithCarrier } from '@/lib/types/Parcel';
 import parcelServices from '@/lib/services/parcelServices';
-// import itemsService from '@/lib/services/itemsService';
 
-// Type of state
+// Shape of state
 export interface parcelState {
   value: Parcel[];
   parcelLists: [string, ParcelWithCarrier[]][];
@@ -40,11 +39,11 @@ export const fetchParcelsAsync = createAsyncThunk(
   }
 );
 
-// export const createItemAsync = createAsyncThunk(
-//   'items/createAsync',
-//   async (content: Item) => {
-//     const item = await itemsService.create(content);
-//     return item;
+// export const createParcelWithCarrierAsync = createAsyncThunk(
+//   'parcels/createAsync',
+//   async (content: ParcelWithCarrier) => {
+//     const parcel = await parcelWithCarrierServices.create(content);
+//     return parcel;
 //   }
 // );
 
@@ -60,17 +59,22 @@ export const parcelSlice = createSlice({
     },
     changeParcelDeliveryState: (state, action) => {
       const parcelIdToChange: string = action.payload;
+
+      // Find index of selected parcel list
       const selectedParcelListIndex = state.parcelLists.findIndex(
         ([date, parcels]) => {
           return date === state.selectedParcelList.date;
         }
       );
+
+      // index of selected parcel
       const selectedParcelIndex = state.parcelLists[
         selectedParcelListIndex
       ][1].findIndex((parcel) => {
         return parcel.id.$oid === parcelIdToChange;
       });
 
+      // Change delivery state
       state.parcelLists[selectedParcelListIndex][1][
         selectedParcelIndex
       ].isDelivered = true;
@@ -111,7 +115,7 @@ export const parcelSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-
+      //reducers for fetching parcels from server
       .addCase(fetchParcelsAsync.pending, (state) => {
         state.status = 'loading';
       })

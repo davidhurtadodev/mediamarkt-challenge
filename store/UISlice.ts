@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// Shape of state
 export interface UIState {
   view: {
     value: string;
