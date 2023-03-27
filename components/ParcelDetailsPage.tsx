@@ -1,20 +1,19 @@
 import { RootState } from '@/store';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { changeViewValue, changeAsideState } from '@/store/UISlice';
-import IconWithBackground from './IconWithBackground';
-import AsideSection from './AsideSection';
 import backIcon from '@/public/assets/icons/back.svg';
 import Image from 'next/image';
 import Button from './Button';
-import FormDriver from './Form/FormDriver';
 import ItemComponent from './ItemComponent';
 import Modal from './Modal/Modal';
 
-export default function ParcelDetails() {
+export default function ParcelDetailsPage() {
   const dispatch = useAppDispatch();
   const selectedParcelId = useAppSelector(
     (state: RootState) => state.parcel.selectedParcel.id
   );
+
+  //Get items's info of the parcel list
   const allItems = useAppSelector((state: RootState) => state.item.value);
   let parcels = useAppSelector((state: RootState) => state.parcel.value);
 
@@ -22,11 +21,6 @@ export default function ParcelDetails() {
     (parcel) => parcel.id.$oid === selectedParcelId
   );
 
-  // const selectedParcelItems = selectedParcel?.items.map((itemOnParcel) => {
-  //   return allItems.filter((item) =>
-  //     item.id.$oid === itemOnParcel.$oid ? item : null
-  //   );
-  // });
   const selectedParcelItems = allItems.filter((item) => {
     return selectedParcel?.items.some(
       (itemInParcel) => item.id.$oid === itemInParcel.$oid
@@ -46,7 +40,7 @@ export default function ParcelDetails() {
   };
 
   return (
-    <div className="h-screen flex flex-col     border-b-[1px] border-[#3A35411F] pb-4">
+    <div className="h-screen flex flex-col   pb-4">
       <Modal />
       <div>
         <div className="  flex items-center mb-6">
@@ -70,9 +64,6 @@ export default function ParcelDetails() {
       <div className="w-full mt-auto mb-0">
         <Button onClick={deliveryBtnHandler}>Delivery</Button>
       </div>
-      <AsideSection>
-        <FormDriver />
-      </AsideSection>
     </div>
   );
 }

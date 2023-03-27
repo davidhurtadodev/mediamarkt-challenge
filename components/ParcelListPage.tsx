@@ -1,18 +1,12 @@
 import Image from 'next/image';
 import helper from '@/lib/helper';
-import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { RootState } from '@/store';
 import { changeViewValue } from '@/store/UISlice';
 import ParcelListComponent from './ParcelListComponent';
 import backIcon from '@/public/assets/icons/back.svg';
 
-interface ParcelListDetailsProps {
-  parcels: ParcelWithCarrier[];
-  pickUpDate: string;
-}
-
-export default function ParcelListDetails({}) {
+export default function ParcelListPage({}) {
   const dispatch = useAppDispatch();
   const selectedParcelListDate = useAppSelector(
     (state: RootState) => state.parcel.selectedParcelList.date
@@ -21,16 +15,20 @@ export default function ParcelListDetails({}) {
   const parcelsLists = useAppSelector(
     (state: RootState) => state.parcel.parcelLists
   );
+
+  //Find selected parcel list info
   const selectedList = parcelsLists.find(([date, parcelList]) => {
     return date === selectedParcelListDate;
   });
   const selectedParcelLists = selectedList![1];
 
+  // Calculate total items of a parcel list
   const totalItems = selectedParcelLists.reduce(
     (acc, current) => acc + current.itemsCount,
     0
   );
 
+  // Return to list of parcels function
   const backIconClickHandler = () => {
     dispatch(changeViewValue('listOfParcelLists'));
   };

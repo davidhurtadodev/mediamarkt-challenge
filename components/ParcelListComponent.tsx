@@ -5,6 +5,7 @@ import { changeViewValue } from '@/store/UISlice';
 import { changeSelectedParcel } from '@/store/parcelSlice';
 import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import cargoImg from '@/public/assets/icons/cargo.svg';
+import ReusableContainer from './ReusableContainer';
 
 interface ParcelListComponentProps {
   parcel: ParcelWithCarrier;
@@ -24,11 +25,10 @@ export default function ParcelListComponent({
     return carrier.id.$oid === parcel.carrier.$oid;
   });
   return (
-    <div
+    <ReusableContainer
       onClick={
         !parcel.isDelivered ? () => parcelListDetailsClickHandler() : undefined
       }
-      className="flex border-b-[1px] cursor-pointer border-[#3A35411F] pb-3 mb-3"
       key={parcel.id.$oid}
     >
       <IconWithBackground src={cargoImg} alt="cargo" />
@@ -50,6 +50,6 @@ export default function ParcelListComponent({
           {parcel.itemsCount} to be picked up
         </span>
       </div>
-    </div>
+    </ReusableContainer>
   );
 }

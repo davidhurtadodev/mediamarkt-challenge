@@ -5,10 +5,10 @@ import { fetchItemsAsync } from '@/store/itemSlice';
 import { RootState } from '@/store';
 import { useAppSelector } from '@/store/hooks';
 import { useAppDispatch } from '@/store/hooks';
-import ParcelDetails from './ParcelDetails';
+import ParcelDetailsPage from './ParcelDetailsPage';
 
-import ParcelListDetails from './ParcelListDetails';
-import ListOfParcelLists from './ListOfParcelLists';
+import ParcelListPage from './ParcelListPage';
+import ListOfParcelListsPage from './ListOfParcelListsPage';
 
 export default function Main() {
   const dispatch = useAppDispatch();
@@ -21,10 +21,12 @@ export default function Main() {
     dispatch(fetchItemsAsync());
   }, [dispatch]);
 
-  if (viewValue === 'listOfParcelLists') return <ListOfParcelLists />;
+  // the ideal solution is using NextJs routing, but it's more complex to implement
+  if (viewValue === 'listOfParcelLists') return <ListOfParcelListsPage />;
   else if (viewValue === 'parcelList') {
-    return <ParcelListDetails />;
+    return <ParcelListPage />;
   } else if (viewValue === 'parcel') {
-    return <ParcelDetails />;
+    return <ParcelDetailsPage />;
   }
+  return null;
 }

@@ -1,6 +1,6 @@
-import { format } from 'date-fns';
 import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import helper from '@/lib/helper';
+import ReusableContainer from './ReusableContainer';
 import { changeViewValue } from '@/store/UISlice';
 import { changeSelectedParcelList } from '@/store/parcelSlice';
 import { useAppDispatch } from '@/store/hooks';
@@ -19,7 +19,6 @@ export default function ParcelListContainer({
     (acc, current) => acc + current.itemsCount,
     0
   );
-  // const mappedDeliveryDates = parcels.map((parcel) => parcel.deliveryDate);
 
   const carriersArray = parcelList.map((parcel) => parcel.carrier.$oid);
   console.log(parcelList);
@@ -31,10 +30,7 @@ export default function ParcelListContainer({
   };
 
   return (
-    <div
-      onClick={containerClickHandle}
-      className=" cursor-pointer border-b-[1px] border-[#3A35411F] pb-[14px] mb-4"
-    >
+    <ReusableContainer onClick={containerClickHandle}>
       <h2 className=" px-[14px]  text-base text-gray font-medium mb-0">
         Parcel list {helper.formatDate(pickUpDate)}
       </h2>
@@ -54,6 +50,6 @@ export default function ParcelListContainer({
           </span>
         </div>
       </div>
-    </div>
+    </ReusableContainer>
   );
 }

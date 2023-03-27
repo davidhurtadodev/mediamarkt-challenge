@@ -1,5 +1,4 @@
 {
-  "parcelsWithCarrier": {},
   "parcels": [
     {
       "id": { "$oid": "641db7b2fc13" },
