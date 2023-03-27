@@ -1,7 +1,8 @@
 import IconWithBackground from './IconWithBackground';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { RootState } from '@/store';
-import { changeViewValue, changeSelectedParcel } from '@/store/UISlice';
+import { changeViewValue } from '@/store/UISlice';
+import { changeSelectedParcel } from '@/store/parcelSlice';
 import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import cargoImg from '@/public/assets/icons/cargo.svg';
 
@@ -24,8 +25,10 @@ export default function ParcelListComponent({
   });
   return (
     <div
-      onClick={() => parcelListDetailsClickHandler()}
-      className="flex border-b-[1px] border-[#3A35411F] pb-3 mb-3"
+      onClick={
+        !parcel.isDelivered ? () => parcelListDetailsClickHandler() : undefined
+      }
+      className="flex border-b-[1px] cursor-pointer border-[#3A35411F] pb-3 mb-3"
       key={parcel.id.$oid}
     >
       <IconWithBackground src={cargoImg} alt="cargo" />

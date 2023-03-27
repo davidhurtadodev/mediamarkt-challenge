@@ -36,7 +36,7 @@ export default function ParcelListDetails({}) {
   };
 
   return (
-    <div className="px-5 pt-12 cursor-pointer  h-full  b pb-4">
+    <>
       <div>
         <div className="  flex items-center mb-6">
           <Image
@@ -58,6 +58,6 @@ export default function ParcelListDetails({}) {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }

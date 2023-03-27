@@ -12,6 +12,9 @@ export default function FormParcelCarrier() {
   const dispatch = useAppDispatch();
 
   const carriers = useAppSelector((state: RootState) => state.carrier.value);
+  const UIAsideState = useAppSelector(
+    (state: RootState) => state.UI.asideSection
+  );
 
   //options for select
   const carriersOptions = carriers.map((carrier) => ({
@@ -51,7 +54,7 @@ export default function FormParcelCarrier() {
     );
   };
 
-  return (
+  return UIAsideState.type === 'add-parcel' ? (
     <>
       <h2 className="mb-10 text-[#3A3541DE] text-xl font-medium">
         Parcel and carrier information
@@ -75,5 +78,5 @@ export default function FormParcelCarrier() {
         <Button buttonType="submit">Add</Button>
       </form>
     </>
-  );
+  ) : null;
 }

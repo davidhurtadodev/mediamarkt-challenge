@@ -1,7 +1,8 @@
 import { format } from 'date-fns';
 import { ParcelWithCarrier } from '@/lib/types/Parcel';
 import helper from '@/lib/helper';
-import { changeSelectedParcelList, changeViewValue } from '@/store/UISlice';
+import { changeViewValue } from '@/store/UISlice';
+import { changeSelectedParcelList } from '@/store/parcelSlice';
 import { useAppDispatch } from '@/store/hooks';
 
 interface ParcelContainerProps {
@@ -32,7 +33,7 @@ export default function ParcelListContainer({
   return (
     <div
       onClick={containerClickHandle}
-      className="cursor-pointer border-b-[1px] border-[#3A35411F] pb-[14px] mb-4"
+      className=" cursor-pointer border-b-[1px] border-[#3A35411F] pb-[14px] mb-4"
     >
       <h2 className=" px-[14px]  text-base text-gray font-medium mb-0">
         Parcel list {helper.formatDate(pickUpDate)}

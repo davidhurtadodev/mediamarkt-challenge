@@ -32,25 +32,26 @@ export const UISlice = createSlice({
   name: 'UI',
   initialState: initialState,
   reducers: {
+    closeModal: (state, action) => {
+      state.modal = initialState.modal;
+    },
+    openModal: (state, action) => {
+      state.modal = {
+        isVisible: true,
+        type: action.payload,
+      };
+    },
+
     changeAsideState: (state, action) => {
       state.asideSection = action.payload;
     },
-    changeSelectedParcelList: (state, action) => {
-      state.selectedParcelList.date = action.payload;
-    },
+
     changeViewValue: (state, action) => {
       state.view.value = action.payload;
     },
-    changeSelectedParcel: (state, action) => {
-      state.selectedParcel.id = action.payload;
-    },
   },
 });
-export const {
-  changeAsideState,
-  changeSelectedParcelList,
-  changeViewValue,
-  changeSelectedParcel,
-} = UISlice.actions;
+export const { changeAsideState, closeModal, openModal, changeViewValue } =
+  UISlice.actions;
 
 export default UISlice.reducer;

@@ -58,7 +58,23 @@ export const parcelSlice = createSlice({
     changeSelectedParcel: (state, action) => {
       state.selectedParcel.id = action.payload;
     },
-    changeParcelDeliveryState: (state, action) => {},
+    changeParcelDeliveryState: (state, action) => {
+      const parcelIdToChange: string = action.payload;
+      const selectedParcelListIndex = state.parcelLists.findIndex(
+        ([date, parcels]) => {
+          return date === state.selectedParcelList.date;
+        }
+      );
+      const selectedParcelIndex = state.parcelLists[
+        selectedParcelListIndex
+      ][1].findIndex((parcel) => {
+        return parcel.id.$oid === parcelIdToChange;
+      });
+
+      state.parcelLists[selectedParcelListIndex][1][
+        selectedParcelIndex
+      ].isDelivered = true;
+    },
     addParcelToList: (state, action) => {
       const parcel = state.value.find((parcel: Parcel) => {
         return parcel.id.$oid === action.payload.parcelId ? parcel : null;
@@ -113,6 +129,7 @@ export const {
   addParcelToList,
   changeSelectedParcelList,
   changeSelectedParcel,
+  changeParcelDeliveryState,
 } = parcelSlice.actions;
 
 export default parcelSlice.reducer;

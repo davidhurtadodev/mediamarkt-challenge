@@ -1,16 +1,19 @@
 import { RootState } from '@/store';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
-import { changeViewValue } from '@/store/UISlice';
+import { changeViewValue, changeAsideState } from '@/store/UISlice';
 import IconWithBackground from './IconWithBackground';
+import AsideSection from './AsideSection';
 import backIcon from '@/public/assets/icons/back.svg';
 import Image from 'next/image';
 import Button from './Button';
+import FormDriver from './Form/FormDriver';
 import ItemComponent from './ItemComponent';
+import Modal from './Modal/Modal';
 
 export default function ParcelDetails() {
   const dispatch = useAppDispatch();
   const selectedParcelId = useAppSelector(
-    (state: RootState) => state.UI.selectedParcel.id
+    (state: RootState) => state.parcel.selectedParcel.id
   );
   const allItems = useAppSelector((state: RootState) => state.item.value);
   let parcels = useAppSelector((state: RootState) => state.parcel.value);
@@ -33,9 +36,18 @@ export default function ParcelDetails() {
   const backIconClickHandler = () => {
     dispatch(changeViewValue('parcelList'));
   };
+  const deliveryBtnHandler = (e: React.MouseEvent<HTMLElement>) => {
+    dispatch(
+      changeAsideState({
+        isVisible: true,
+        type: 'check-driver',
+      })
+    );
+  };
 
   return (
-    <div className="h-screen flex flex-col px-5 pt-12 cursor-pointer    border-b-[1px] border-[#3A35411F] pb-4">
+    <div className="h-screen flex flex-col     border-b-[1px] border-[#3A35411F] pb-4">
+      <Modal />
       <div>
         <div className="  flex items-center mb-6">
           <Image
@@ -56,8 +68,11 @@ export default function ParcelDetails() {
         </div>
       </div>
       <div className="w-full mt-auto mb-0">
-        <Button>Delivery</Button>
+        <Button onClick={deliveryBtnHandler}>Delivery</Button>
       </div>
+      <AsideSection>
+        <FormDriver />
+      </AsideSection>
     </div>
   );
 }

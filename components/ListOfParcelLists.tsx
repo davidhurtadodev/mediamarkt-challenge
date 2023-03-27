@@ -26,11 +26,12 @@ export default function ListOfParcelLists() {
   };
 
   return (
-    <div
-      className={`px-5 pt-12  h-full ${
-        asideState.isVisible ? 'overflow-y-hidden' : ''
-      }`}
-    >
+    // <div
+    //   className={`px-5 pt-12  h-full ${
+    //     asideState.isVisible ? 'overflow-y-hidden' : ''
+    //   }`}
+    // >
+    <>
       <h1 className="font-medium px-[14px] text-2xl text-gray mb-6">
         Parcel Lists
       </h1>
@@ -59,6 +60,7 @@ export default function ListOfParcelLists() {
       <AsideSection>
         <FormParcelCarrier />
       </AsideSection>
-    </div>
+      {/* </div> */}
+    </>
   );
 }

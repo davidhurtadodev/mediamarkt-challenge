@@ -1,21 +1,21 @@
 import Image from 'next/image';
 import Button from '../Button';
-import successIcon from '@/public/assets/icons/success.svg';
+import errorIcon from '@/public/assets/icons/smartphoneModal.svg';
 import { useAppDispatch } from '@/store/hooks';
 import { closeModal } from '@/store/UISlice';
 
-export default function ModalSuccess() {
+export default function ModalError() {
   const dispatch = useAppDispatch();
   const closeModalBtnHandler = () => {
     dispatch(closeModal(null));
   };
   return (
     <>
-      <Image className="mb-5" src={successIcon} alt="success" />
+      <Image className="mb-5" src={errorIcon} alt="success" />
       <h3 className="font-normal mb-8 text-xl leading-6">
-        Parcel successfully delivered to the carrier
+        Some information is wrong
       </h3>
-      <Button onClick={closeModalBtnHandler}>Go to parcel list</Button>
+      <Button onClick={closeModalBtnHandler}>Back</Button>
     </>
   );
 }
