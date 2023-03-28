@@ -39,14 +39,6 @@ export const fetchParcelsAsync = createAsyncThunk(
   }
 );
 
-// export const createParcelWithCarrierAsync = createAsyncThunk(
-//   'parcels/createAsync',
-//   async (content: ParcelWithCarrier) => {
-//     const parcel = await parcelWithCarrierServices.create(content);
-//     return parcel;
-//   }
-// );
-
 export const parcelSlice = createSlice({
   name: 'parcels',
   initialState,

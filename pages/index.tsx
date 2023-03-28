@@ -1,8 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { useEffect } from 'react';
-import { Inter } from 'next/font/google';
-import MainView from '@/components/MainView';
 import Layout from '@/components/Layout';
 import { useAppDispatch } from '@/store/hooks';
 import { fetchParcelsAsync } from '@/store/parcelSlice';

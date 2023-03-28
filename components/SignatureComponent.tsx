@@ -6,6 +6,7 @@ import { useAppDispatch } from '@/store/hooks';
 export default function SignatureComponent() {
   const dispatch = useAppDispatch();
 
+  //Close Aside
   const saveSignatureBtnHandler = () => {
     dispatch(
       changeAsideState({
