@@ -10,11 +10,8 @@ import useBrowserModal from '@/lib/useBrowserModal';
 export default function Modal() {
   const dispatch = useAppDispatch();
   const isBrowser = useBrowserModal();
-  // const [isBrowser, setIsBrowser] = useState(false);
+
   const modalUIState = useAppSelector((state: RootState) => state.UI.modal);
-  // useEffect(() => {
-  //   setIsBrowser(true);
-  // }, []);
 
   const handleCloseClick = () => {
     dispatch(closeModal(null));

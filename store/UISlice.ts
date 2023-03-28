@@ -29,6 +29,8 @@ const initialState: UIState = {
   },
 };
 
+//Slcie
+
 export const UISlice = createSlice({
   name: 'UI',
   initialState: initialState,

@@ -10,6 +10,7 @@ import ListOfParcelLists from '@/components/ListOfParcelLists';
 export default function Home() {
   const dispatch = useAppDispatch();
 
+  //Fetching of initial data
   useEffect(() => {
     dispatch(fetchParcelsAsync());
     dispatch(fetchCarriersAsync());

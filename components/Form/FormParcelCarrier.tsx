@@ -11,7 +11,7 @@ import selectStyles from '@/lib/misc/selectStyles';
 export default function FormParcelCarrier() {
   const dispatch = useAppDispatch();
 
-  //State
+  //GLobal State
   const carriers = useAppSelector((state: RootState) => state.carrier.value);
   const UIAsideState = useAppSelector(
     (state: RootState) => state.UI.asideSection
@@ -37,13 +37,16 @@ export default function FormParcelCarrier() {
     console.log(carrierId);
   };
 
+  //Handle submit
   const handleParcelSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
+    //Validate parcel id
     const isValidParcelId = parcelsState.some(
       (parcel) => parcel.id.$oid === parcelId.toLowerCase()
     );
 
+    //Create payload
     if (isValidParcelId) {
       const info = {
         parcelId: parcelId.toLowerCase(),
@@ -53,6 +56,7 @@ export default function FormParcelCarrier() {
       dispatch(addParcelToList(info));
     } else dispatch(openModal('error'));
 
+    //Restart inputs value and close aside
     setParcelId('');
     setCarrierId('');
     dispatch(

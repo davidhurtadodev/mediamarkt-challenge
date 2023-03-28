@@ -10,6 +10,7 @@ import { ParcelWithCarrier } from '@/lib/types/Parcel';
 export default function FormDriver() {
   const dispatch = useAppDispatch();
 
+  //Global State
   const UIAsideState = useAppSelector(
     (state: RootState) => state.UI.asideSection
   );
@@ -20,9 +21,11 @@ export default function FormDriver() {
   const parcelList = useAppSelector(
     (state: RootState) => state.parcel.parcelLists
   );
+  //Input's values
   const [driversName, setDriversName] = useState('');
   const [license, setLicense] = useState('');
 
+  //onChange Handlers
   const handleDriverChange = (e: React.FormEvent<HTMLInputElement>) => {
     setDriversName(e.currentTarget.value);
   };
@@ -30,8 +33,10 @@ export default function FormDriver() {
     setLicense(e.currentTarget.value.toUpperCase());
   };
 
+  //onSubmit Handler
   const handleDeliverySubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+
     //find parcelId in parcelList
     const parcelListWithoutDate = parcelList.map(([date, parcels]) => parcels);
 
@@ -60,19 +65,18 @@ export default function FormDriver() {
       licenseToVerify === license.toLowerCase()
     ) {
       dispatch(changeParcelDeliveryState(selectedParcelId));
-      //   dispatch(openModal('success'));
+      dispatch(
+        changeAsideState({
+          isVisible: true,
+          type: 'signature',
+        })
+      );
     } else {
       dispatch(openModal('error'));
     }
-
+    // Restart inputs state and close aside
     setDriversName('');
     setLicense('');
-    dispatch(
-      changeAsideState({
-        isVisible: true,
-        type: 'signature',
-      })
-    );
   };
   return UIAsideState.type === 'check-driver' ? (
     <>

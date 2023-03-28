@@ -1,5 +1,7 @@
 import { format } from 'date-fns';
 
+// Helper functions that are used inf different parts
+
 //Convert g to kg
 function weightConversion(weight: number): string {
   if (weight.toString().length >= 4) {
