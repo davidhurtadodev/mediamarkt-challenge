@@ -1,10 +1,12 @@
 # MediaMarkt's Carriex
 
+![alt text](./screenshot-markt.png 'Carriex')
+
 The project is a NUWE's challenge and was part of the MediaMarkt Hackathon Let's Go 2023
 
 ## Description
 
-The app will help the warehouse team for handling the and dispatching the parcels to the carriers. You could add a parcel and assign a carrier. The app will create parcel lists and organize the parcels by the date that the warehouse team have to deliver the parcels. Also, when you deliver the parcel to a carrier, you may enter the carrier's data, validate it and change the deliver state of the parcel.
+The app will help the warehouse team for handling and dispatch the parcels to the carriers. You could add a parcel and assign a carrier. The app will create parcel lists and organize the parcels by the date that the warehouse team has to deliver the parcels. Also, when you deliver the parcel to a carrier, you may enter the carrier's data, validate it and change the delivery state of the parcel.
 
 ## Installation
 

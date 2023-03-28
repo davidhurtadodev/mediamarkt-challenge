@@ -28,9 +28,6 @@ export default function ParcelView() {
     );
   });
 
-  // const backIconClickHandler = () => {
-  //   dispatch(changeViewValue('parcelList'));
-  // };
   const deliveryBtnHandler = (e: React.MouseEvent<HTMLElement>) => {
     dispatch(
       changeAsideState({
